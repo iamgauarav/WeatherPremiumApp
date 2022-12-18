@@ -13,13 +13,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:visibility="visible" />
+        android:visibility="gone" />
 
     <RelativeLayout
         android:id="@+id/idRLHome"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/idIVBack"
@@ -35,6 +35,7 @@
             android:layout_marginTop="30dp"
             android:gravity="center"
             android:padding="20dp"
+            android:textStyle="bold"
             android:text="City Name"
             android:textAlignment="center"
             android:textColor="@color/material_on_primary_emphasis_high_type"
@@ -45,6 +46,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/idTVCityName"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:paddingRight="1dp"
+            android:layout_marginEnd="1dp"
             android:orientation="horizontal"
             android:weightSum="5">
 

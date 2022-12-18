@@ -1,11 +1,5 @@
 package com.example.weatherpremiumapp;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -24,6 +18,12 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -104,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
         searchIv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                iconIV.resumeAnimation(R.raw.ss);
                 String city= Objects.requireNonNull(cityEdit.getText()).toString();
                 if (city.isEmpty()){
                     Toast.makeText(MainActivity.this, "Please enter city name", Toast.LENGTH_SHORT).show();
@@ -153,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
         return cityName;
     }
     private void getWeatherInfo(String cityName){
-        String url= "https://api.weatherapi.com/v1/forecast.json?key=bda60559e66a4ab2a33130446221711&q=" + cityName + "&days=1&aqi=yes&alerts=yes";
+        String url= "https://api.weatherapi.com/v1/forecast.json?key=9698bd600d894808a8441627221812&q=" + cityName + "&days=1&aqi=yes&alerts=yes";
         System.out.println(url);
 //        Toast.makeText(this, "flag"+cityName, Toast.LENGTH_SHORT).show();
         cityNameTv.setText(cityName);
@@ -180,19 +179,22 @@ public class MainActivity extends AppCompatActivity {
                     conditionTv.setText(condition);
                     if(condition.equals("Overcast")) {
                         iconIV.setAnimation(R.raw.oo);
-                        String lottie_autoPlay = "true";
+                        iconIV.resumeAnimation();
                     }
                     else if(condition.equals("Sunny")) {
                         iconIV.setAnimation(R.raw.ss);
-                        String lottie_autoPlay = "true";
+                      //  backIV.setImageResource(R.drawable.);
+                        iconIV.resumeAnimation();
                     }
                     else if(condition.equals("Mist")) {
                         iconIV.setAnimation(R.raw.dd);
-                        String lottie_autoPlay = "true";
+
+                        iconIV.resumeAnimation();
                     }
                     else {
                         iconIV.setAnimation(R.raw.cc);
-                        String lottie_autoPlay = "true";
+
+                        iconIV.resumeAnimation();
                     }
                     if (isDay==1){
                         //Morning
